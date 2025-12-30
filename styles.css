@@ -1,177 +1,301 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TechPulse Blog</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
+/* =========================
+   THEME
+========================= */
+:root{
+  --bg: #0b1220;
+  --paper: #0f172a;
+  --text: #e5e7eb;
+  --muted: #a7b0c0;
+  --line: rgba(255,255,255,.12);
+  --accent: #3b82f6;
+  --accent2: #22c55e;
+}
 
-<header>
-  <div class="container">
-    <h1 class="brand">Tech<span>P</span>ulse</h1>
-    <div class="nav">
-      <a class="active" href="index.html">Home</a>
-      <a href="posts.html">Posts</a>
-      <a href="about.html">About & Contact</a>
-    </div>
-  </div>
-</header>
+/* Reset */
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height:1.6;
+  color: var(--text);
+  background:
+    radial-gradient(900px 400px at 15% 10%, rgba(59,130,246,.25), transparent 55%),
+    radial-gradient(900px 400px at 85% 20%, rgba(34,197,94,.18), transparent 55%),
+    var(--bg);
+}
+a{ color: var(--accent); text-decoration:none; }
+a:hover{ text-decoration:underline; }
+p{ color: var(--muted); margin: 10px 0; }
+h1,h2,h3{ color:#fff; }
 
-<div class="container">
-  <div class="hero">
-    <span class="badge">Responsive • Floats • Media Queries</span>
-    <h2>Welcome to TechPulse</h2>
-    <p>
-      A clean tech blog demo built with <b>HTML5</b> and <b>CSS3</b>.
-      Desktop uses a <b>3-column float layout</b> and mobile switches to a <b>single-column</b>.
-    </p>
+/* =========================
+   Container (ödevde istenen)
+========================= */
+.container{
+  width: 90%;
+  margin: 18px auto;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(15,23,42,.78);
+  backdrop-filter: blur(6px);
+}
 
-    <div class="stats">
-      <span class="stat"><b>3</b> Pages</span>
-      <span class="stat"><b>Float</b> Layout</span>
-      <span class="stat"><b>Mobile</b> Ready</span>
-    </div>
+/* =========================
+   Header + Nav
+========================= */
+header{
+  padding: 26px 0;
+  background: linear-gradient(90deg, rgba(59,130,246,.22), rgba(34,197,94,.12));
+  border-bottom: 1px solid var(--line);
+}
+header .container{
+  background: transparent;
+  border:none;
+  border-radius: 0;
+  margin: 0 auto;
+}
+.brand{
+  margin:0;
+  font-size: 34px;
+  letter-spacing: .5px;
+}
+.brand span{ color: var(--accent); }
 
-    <a class="btn" href="posts.html">Explore Posts</a>
+.nav{ margin-top: 10px; }
+.nav a{
+  display:inline-block;
+  padding: 10px 12px;
+  margin-right: 8px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(255,255,255,.04);
+  color: var(--text);
+}
+.nav a:hover{
+  background: rgba(59,130,246,.18);
+  border-color: rgba(59,130,246,.35);
+  text-decoration:none;
+}
+.nav a.active{
+  background: rgba(34,197,94,.18);
+  border-color: rgba(34,197,94,.45);
+}
 
-    <!-- ROOT: hero.jpg -->
-    <img class="hero-img" src="hero.jpg" alt="Tech hero" />
-  </div>
-</div>
+/* =========================
+   Hero
+========================= */
+.hero{
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 18px;
+  background: linear-gradient(135deg, rgba(59,130,246,.22), rgba(34,197,94,.10));
+}
+.hero h2{ margin: 6px 0 6px; font-size: 26px; }
 
-<div class="container">
-  <h2>Key Features</h2>
-  <p class="meta">This section highlights course topics clearly.</p>
+.badge{
+  display:inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(59,130,246,.35);
+  background: rgba(59,130,246,.12);
+  color: #dbeafe;
+  font-size: 12px;
+}
 
-  <div class="row">
-    <div class="column">
-      <p class="kicker">Layout</p>
-      <h3>Float Columns</h3>
-      <p>3-column desktop layout built using floats.</p>
-      <ul class="list">
-        <li>Column widths + margins</li>
-        <li>Consistent spacing</li>
-        <li>Card-like UI</li>
-      </ul>
-    </div>
+.stats{ margin-top: 12px; }
+.stat{
+  display:inline-block;
+  margin-right: 10px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.04);
+  color: var(--text);
+}
+.stat b{ color: #fff; }
 
-    <div class="column">
-      <p class="kicker">Structure</p>
-      <h3>Clearfix</h3>
-      <p>Clears floats so containers don’t collapse.</p>
-      <ul class="list">
-        <li>Stable layout blocks</li>
-        <li>Cleaner sections</li>
-        <li>Easy to extend</li>
-      </ul>
-    </div>
+.hero-img{
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.12);
+  margin-top: 14px;
+}
 
-    <div class="column">
-      <p class="kicker">Responsive</p>
-      <h3>Media Queries</h3>
-      <p>Switches layout to single column on mobile.</p>
-      <ul class="list">
-        <li>Max-width: 768px</li>
-        <li>Float removed</li>
-        <li>100% width columns</li>
-      </ul>
-    </div>
+/* =========================
+   Buttons
+========================= */
+.btn{
+  display:inline-block;
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(59,130,246,.35);
+  background: rgba(59,130,246,.18);
+  color: #eaf2ff;
+}
+.btn:hover{
+  background: rgba(59,130,246,.28);
+  text-decoration:none;
+}
 
-    <div class="clearfix"></div>
-  </div>
-</div>
+/* =========================
+   2) Floats – columns (ödev)
+========================= */
+.column{
+  float: left;
+  width: 30%;
+  margin: 1.66%;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.04);
+}
 
-<div class="container">
-  <div class="column">
-    <p class="kicker">Trending</p>
-    <h2>Latest News</h2>
-    <p>Weekly highlights: releases, apps, and web trends.</p>
-    <ul class="list">
-      <li>New device launches</li>
-      <li>AI product updates</li>
-      <li>Security headlines</li>
-    </ul>
-    <a class="btn" href="posts.html">See posts</a>
-  </div>
+/* 3) clearfix (ödev) */
+.clearfix::after{
+  content:"";
+  display: table;
+  clear: both;
+}
 
-  <div class="column">
-    <p class="kicker">Hands-on</p>
-    <h2>Reviews</h2>
-    <p>Short gadget reviews with pros/cons.</p>
-    <ul class="list">
-      <li>Phones & earbuds</li>
-      <li>Laptops for students</li>
-      <li>Budget picks</li>
-    </ul>
-    <a class="btn" href="posts.html">See reviews</a>
-  </div>
+/* Typography helpers */
+.kicker{
+  color: #dbeafe;
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin: 0 0 6px;
+}
+.list{
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+.list li{ color: var(--muted); margin: 6px 0; }
 
-  <div class="column">
-    <p class="kicker">Learn</p>
-    <h2>Tutorials</h2>
-    <p>Fast guides on HTML/CSS and productivity tools.</p>
-    <ul class="list">
-      <li>Responsive basics</li>
-      <li>Float + clearfix</li>
-      <li>UI spacing tips</li>
-    </ul>
-    <a class="btn" href="posts.html">See tutorials</a>
-  </div>
+.meta{ font-size: 12px; color: var(--muted); }
 
-  <div class="clearfix"></div>
-</div>
+/* =========================
+   Grid section
+========================= */
+.grid .column{
+  text-align: left;
+  font-weight: 400;
+}
 
-<div class="container grid">
-  <h2>Float Grid Example</h2>
-  <p class="meta">A grid-like layout built with floated columns.</p>
+/* =========================
+   Cards (Posts/About)
+========================= */
+.card{
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 16px;
+  background: rgba(255,255,255,.03);
+  margin-bottom: 14px;
+}
 
-  <div class="row">
-    <div class="column">
-      <h3>AI & Productivity</h3>
-      <p class="meta">Tools, prompts and workflows.</p>
-      <ul class="list">
-        <li>Study assistants</li>
-        <li>Note organization</li>
-        <li>Presentation helpers</li>
-      </ul>
-      <a class="btn" href="posts.html">See AI posts</a>
-    </div>
+/* Chips */
+.filter-bar{ margin: 12px 0 18px; }
+.chip{
+  display:inline-block;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.04);
+  margin-right: 6px;
+}
+.chip.blue{ border-color: rgba(59,130,246,.35); background: rgba(59,130,246,.12); color:#dbeafe; }
+.chip.green{ border-color: rgba(34,197,94,.35); background: rgba(34,197,94,.12); color:#dcfce7; }
 
-    <div class="column">
-      <h3>Gadget Reviews</h3>
-      <p class="meta">Pros/cons in 60 seconds.</p>
-      <ul class="list">
-        <li>Battery & performance</li>
-        <li>Price/value</li>
-        <li>Best picks</li>
-      </ul>
-      <a class="btn" href="posts.html">See reviews</a>
-    </div>
+/* Post thumbnails */
+.thumb{
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.12);
+  margin: 10px 0;
+}
 
-    <div class="column">
-      <h3>Web Tutorials</h3>
-      <p class="meta">Small lessons for beginners.</p>
-      <ul class="list">
-        <li>Layouts & spacing</li>
-        <li>Responsive design</li>
-        <li>Clean navigation</li>
-      </ul>
-      <a class="btn" href="posts.html">See tutorials</a>
-    </div>
+/* =========================
+   7) Text wrapping example (ödev)
+========================= */
+.post img.wrap{
+  float: left;
+  width: 50%;
+  margin: 0 16px 10px 0;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  height:auto;
+  display:block;
+}
 
-    <div class="clearfix"></div>
-  </div>
-</div>
+/* Inputs */
+input, textarea{
+  width:100%;
+  padding: 10px 12px;
+  margin: 8px 0;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.03);
+  color: var(--text);
+}
+input:focus, textarea:focus{
+  outline:none;
+  border-color: rgba(59,130,246,.55);
+  box-shadow: 0 0 0 4px rgba(59,130,246,.12);
+}
 
-<footer>
-  <div class="container">
-    <p>© 2025 TechPulse • Built for YBS215</p>
-  </div>
-</footer>
+/* Hover polish */
+.column, .card{
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.column:hover, .card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.25);
+}
 
-<a class="to-top" href="#">↑</a>
+/* Footer */
+footer .container{
+  border:none;
+  background: transparent;
+  text-align:center;
+  color: var(--muted);
+}
 
-</body>
-</html>
+/* Back to top */
+.to-top{
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(15,23,42,.65);
+  color: #fff;
+}
+.to-top:hover{ text-decoration:none; background: rgba(59,130,246,.25); }
+
+/* =========================
+   5) Responsive (ödev)
+========================= */
+@media (max-width: 768px){
+  .column{
+    float: none;
+    width: 100%;
+    margin: 10px 0;
+  }
+  .post img.wrap{
+    float:none;
+    width:100%;
+    margin: 0 0 10px 0;
+  }
+}
