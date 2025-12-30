@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechPulse - About & Contact</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1 class="brand">Tech<span>P</span>ulse</h1>
+    <div class="nav">
+      <a href="index.html">Home</a>
+      <a href="posts.html">Posts</a>
+      <a class="active" href="about.html">About & Contact</a>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <h2>About</h2>
+  <p>
+    TechPulse is a student project for <b>YBS215 – Introduction to Web Design</b>.
+    It demonstrates a responsive layout using <b>CSS floats</b>, <b>clearfix</b> and <b>media queries</b>.
+  </p>
+
+  <div class="card">
+    <h3>Team</h3>
+    <p class="meta">Update names & student numbers.</p>
+    <ul class="list">
+      <li>Name Surname — 2025XXXX</li>
+      <li>Name Surname — 2025XXXX</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Tech Stack</h3>
+    <ul class="list">
+      <li>HTML5 (semantic structure)</li>
+      <li>CSS3 (floats, clearfix, media queries)</li>
+      <li>GitHub Pages (deployment)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Text wrapping around image example -->
+<div class="container">
+  <h2>Text Wrapping Example</h2>
+  <div class="post">
+    <img class="wrap" src="img/tech.jpg" alt="Tech image" />
+
+    <p>
+      This paragraph demonstrates how text wraps around a floated image.
+      On desktop, the image is floated to the left and takes 50% width.
+      On mobile (max-width 768px), the image becomes full width and the text stacks below.
+    </p>
+    <p>
+      This is useful for blog posts where you want an image next to the introduction text.
+    </p>
+
+    <div class="clearfix"></div>
+  </div>
+</div>
+
+<div class="container">
+  <h2>Contact</h2>
+  <p class="meta">Form is visual only (no backend required).</p>
+
+  <form class="card">
+    <label>Name</label>
+    <input type="text" placeholder="Your name" />
+
+    <label>Email</label>
+    <input type="email" placeholder="yourmail@example.com" />
+
+    <label>Message</label>
+    <textarea rows="5" placeholder="Write your message..."></textarea>
+
+    <button type="button" class="btn">Send</button>
+  </form>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2025 TechPulse • Built for YBS215</p>
+  </div>
+</footer>
+
+<a class="to-top" href="#">↑</a>
+
+</body>
+</html>
